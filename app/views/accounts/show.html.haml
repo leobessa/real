@@ -1,0 +1,19 @@
+%p
+  %b Name:
+  = @account.name
+%p
+  %b Opening balance:
+  = number_to_currency(@account.opening_balance,:delimiter => ".", :separator => ",", :unit => "R$", :precision => 2)
+%p
+  %b Opening date:
+  = @account.opening_date
+%p
+  %b Type:
+  = @account.type
+%p
+  %b Balance:
+  = number_to_currency(@account.balance,:delimiter => ".", :separator => ",", :unit => "R$", :precision => 2)
+
+= link_to 'Edit', edit_account_path(@account)
+\|
+= link_to 'Back', accounts_path

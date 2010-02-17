@@ -1,0 +1,27 @@
+%h1 Listing accounts
+
+%table
+  %tr
+    %th Name
+    %th Opening balance
+    %th Opening date
+    %th Type
+    %th Balance
+    %th
+    %th
+    %th
+
+  - @accounts.each do |account|
+    %tr
+      %td= account.name
+      %td= number_to_currency(account.opening_balance,:delimiter => ".", :separator => ",", :unit => "R$", :precision => 2)
+      %td= l account.opening_date
+      %td= account.type
+      %td= number_to_currency(account.balance,:delimiter => ".", :separator => ",", :unit => "R$", :precision => 2)
+      %td= link_to 'Show', account
+      %td= link_to 'Edit', edit_account_path(account)
+      %td= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New account', new_account_path

@@ -1,0 +1,10 @@
+!!! 
+%html
+  %head
+    %title= "Accounts:#{controller.action_name}"
+    = csrf_meta_tag
+    = stylesheet_link_tag 'scaffold'
+    = javascript_include_tag :defaults
+  %body
+    %p.notice= notice
+    = yield
