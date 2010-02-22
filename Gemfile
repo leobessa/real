@@ -18,7 +18,7 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
 gem "haml"
 gem "inherited_resources", "1.1.0"
-
+gem "simple_form"
 
 group :test do
   gem "test-unit", "2.0.6"

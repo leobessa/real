@@ -3,8 +3,6 @@
 %table
   %tr
     %th Name
-    %th Opening balance
-    %th Opening date
     %th Type
     %th Balance
     %th
@@ -14,8 +12,6 @@
   - @accounts.each do |account|
     %tr
       %td= account.name
-      %td= number_to_brl_currency(account.opening_balance)
-      %td= l account.opening_date
       %td= account.type
       %td= number_to_brl_currency(account.balance)
       %td= link_to 'Show', account

@@ -1,11 +1,9 @@
 %h1 Editing account
 
-- form_for @account do |f|
+- simple_form_for @account do |f|
   = f.error_messages
-
-  .field
-    = f.label :name
-    = f.text_field :name
+  = f.input :name
+  = f.submit
 
 = link_to 'Show', @account
 \|

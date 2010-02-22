@@ -11,7 +11,7 @@ class Account < ActiveRecord::Base
     class_eval %( def credit(value) write_attribute(:balance, balance #{method} value) end)
   end
   
-  validates_presence_of :name, :opening_balance, :opening_date
-  before_create {|a| a.balance = a.opening_balance }
+  validates_presence_of :name
+  before_create {|a| a.balance = BigDecimal.new('0.00')}
   validates_inclusion_of :type, :in => Account.types
 end
