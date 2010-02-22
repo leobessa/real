@@ -19,9 +19,10 @@ gem "sqlite3-ruby", :require => "sqlite3"
 gem "haml"
 gem "inherited_resources", "1.1.0"
 
+
 group :test do
-  gem "rspec"
-  gem "rspec-rails"
+  gem "test-unit", "2.0.6"
+  gem "rspec-rails", ">= 2.0.0.a9"
   gem "factory_girl"
 end
 

@@ -6,5 +6,11 @@ class AccountsController < InheritedResources::Base
     @account = account_class.new(params[:account] || params[account_class_name.downcase.to_sym])
     create!
   end
+  
+  def balance_sheet
+    @assets = Asset.all
+    @liabilities = Liability.all
+    @equities = Equity.all
+  end
 
 end

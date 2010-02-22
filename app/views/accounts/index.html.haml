@@ -14,10 +14,10 @@
   - @accounts.each do |account|
     %tr
       %td= account.name
-      %td= number_to_currency(account.opening_balance,:delimiter => ".", :separator => ",", :unit => "R$", :precision => 2)
+      %td= number_to_brl_currency(account.opening_balance)
       %td= l account.opening_date
       %td= account.type
-      %td= number_to_currency(account.balance,:delimiter => ".", :separator => ",", :unit => "R$", :precision => 2)
+      %td= number_to_brl_currency(account.balance)
       %td= link_to 'Show', account
       %td= link_to 'Edit', edit_account_path(account)
       %td= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete

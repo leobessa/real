@@ -6,12 +6,12 @@ describe Account do
       :name => "MyString",
       :opening_balance => "9.99",
       :opening_date => "2010-02-12 21:23:04",
-      :type => "MyString",
+      :type => "Asset",
       :balance => "9.99"
     }
   end
 
   it "should create a new instance given valid attributes" do
-    Account.create!(@valid_attributes)
+    Asset.create!(@valid_attributes)
   end
 end

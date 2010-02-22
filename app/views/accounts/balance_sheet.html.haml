@@ -1,0 +1,9 @@
+.balance_sheet
+  .header
+    %h1.economic_unit Personal
+    %h2= t('helpers.balance_sheet')
+    %h3= l(Date.today)
+  .content
+    = render :partial => "balance_sheet_table", :locals => {:class_name => 'Asset', :accounts => @assets}
+    = render :partial => "balance_sheet_table", :locals => {:class_name => 'Liabilitiy', :accounts => @liabilities}
+    = render :partial => "balance_sheet_table", :locals => {:class_name => 'Equity', :accounts => @equities}

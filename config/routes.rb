@@ -1,5 +1,9 @@
 Real::Application.routes.draw do |map|
-  resources :accounts
+  resources :accounts do
+    collection do
+      get :balance_sheet
+    end
+  end
   Account.types.map(&:tableize).each do |t|
     resources t , :controller => :accounts
   end

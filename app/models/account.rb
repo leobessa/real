@@ -2,7 +2,7 @@ class Account < ActiveRecord::Base
   abstract_class = true
   
   def self.types
-    %w(Asset Capital Expense Income Liability)
+    %w(Asset Equity Expense Income Liability)
   end
   def self.debit(method)
     class_eval %(def debit(value) write_attribute(:balance, balance #{method} value) end)

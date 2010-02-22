@@ -1,4 +1,4 @@
-class Capital < Account
+class Equity < Account
   debit :-
   credit :+
 end
