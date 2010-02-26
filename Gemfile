@@ -24,6 +24,9 @@ group :test do
   gem "test-unit", "2.0.6"
   gem "rspec-rails", ">= 2.0.0.a9"
   gem "factory_girl"
+  gem "cucumber-rails", :git => "git://github.com/alg/cucumber-rails.git", :require => "cucumber"
+  gem "database_cleaner"
+  gem "webrat"
 end
 
 ## Bundle gems used only in certain environments:
