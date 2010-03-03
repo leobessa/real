@@ -1,0 +1,22 @@
+%p
+  %b Title:
+  = @accounting_transaction.title
+%p
+  %b Description:
+  = @accounting_transaction.description
+%p
+  %b Creditor:
+  = @accounting_transaction.creditor.name
+%p
+  %b Debitor:
+  = @accounting_transaction.debitor.name
+%p
+  %b Date:
+  = @accounting_transaction.date
+%p
+  %b Status:
+  = @accounting_transaction.status
+
+= link_to 'Edit', edit_accounting_transaction_path(@accounting_transaction)
+\|
+= link_to 'Back', accounting_transactions_path

@@ -1,4 +1,5 @@
 class AccountsController < InheritedResources::Base
+  actions :index, :show, :new, :create
 
   def create
     @account = Account.new(params[:account])

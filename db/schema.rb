@@ -9,12 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100212232304) do
+ActiveRecord::Schema.define(:version => 20100226204127) do
+
+  create_table "accounting_transactions", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.decimal  "amount"
+    t.integer  "creditor_id"
+    t.integer  "debitor_id"
+    t.date     "date"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
-    t.decimal  "opening_balance"
-    t.datetime "opening_date"
     t.string   "type"
     t.decimal  "balance"
     t.datetime "created_at"

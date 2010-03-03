@@ -1,4 +1,5 @@
 Real::Application.routes.draw do |map|
+  resources :accounting_transactions
   resources :accounts do
     collection do
       get :balance_sheet

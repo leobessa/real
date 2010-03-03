@@ -1,0 +1,29 @@
+%h1 Listing accounting_transactions
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Creditor
+    %th Debitor
+    %th Date
+    %th Status
+    %th
+    %th
+    %th
+
+  - @accounting_transactions.each do |accounting_transaction|
+    %tr
+      %td= accounting_transaction.title
+      %td= accounting_transaction.description
+      %td= accounting_transaction.creditor_id
+      %td= accounting_transaction.debitor_id
+      %td= accounting_transaction.date
+      %td= accounting_transaction.status
+      %td= link_to 'Show', accounting_transaction
+      %td= link_to 'Edit', edit_accounting_transaction_path(accounting_transaction)
+      %td= link_to 'Destroy', accounting_transaction, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New accounting_transaction', new_accounting_transaction_path
