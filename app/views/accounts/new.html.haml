@@ -1,9 +1,9 @@
-%h1 New account
+- title t('formtastic.titles.new_account')
 
-- simple_form_for @account do |f|
+- semantic_form_for @account do |f|
   = f.error_messages
   = f.input :name
-  = f.input :type, :collection => Account.types, :as => :radio, :label_method => :to_s, :value_method => :to_s
-  = f.submit
+  = f.input :type, :collection => Account.types, :as => :radio, :label_method => :human_name, :value_method => :to_s
+  = f.commit_button
 
-= link_to 'Back', accounts_path
+= link_to t('navigation.back'), accounts_path
