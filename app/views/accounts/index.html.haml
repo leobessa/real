@@ -1,10 +1,10 @@
-%h1 Listing accounts
+- title t('.title')
 
 %table
   %tr
-    %th Name
-    %th Type
-    %th Balance
+    %th= t('activerecord.attributes.account.name')
+    %th= t('activerecord.attributes.account.type')
+    %th= t('activerecord.attributes.account.balance')
     %th
     %th
     %th
@@ -12,12 +12,11 @@
   - @accounts.each do |account|
     %tr
       %td= account.name
-      %td= account.type
+      %td= t("activerecord.models.#{account.type.underscore}")
       %td= number_to_brl_currency(account.balance)
-      %td= link_to 'Show', account
-      %td= link_to 'Edit', edit_account_path(account)
-      %td= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to t('navigation.show'), account
+      %td= link_to t('navigation.edit'), edit_account_path(account)
 
 %br
 
-= link_to 'New account', new_account_path
+= link_to t('formtastic.actions.open_account'), new_account_path

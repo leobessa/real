@@ -136,24 +136,37 @@ pt-BR:
       accounting_transaction: "Transação"
     attributes:
       account:
-        name: "nome"
-        type: "tipo"
+        name: "Nome"
+        type: "Tipo"
+        balance: "Balanço"
         
   formtastic:
         titles:
           new_account: "Nova conta"
+          edit_account: "Editando conta"
         labels:
           account:
             name: "Nome"
             type: "Tipo"
-            edit:
-              title: "Edit title"
         hints:
           account:
-            title: "ex.: Banco do Brasil"
+            name: "ex.: Banco do Brasil"
         actions:
           create: "Criar {{model}}"
           update: "Salvar"
+          new: "Novo {{model}}"
+          open_account: "Abrir conta"
           
   navigation:
-    back: "Voltar"
+    back: "voltar"
+    edit: "editar"
+    show: "visualizar"
+    
+  accounts:
+      index:
+        title: "Plano de Contas"
+        
+  helpers:
+    total_account_group: "Total da contas de {{group}}"
+    account_type: "Conta de {{type}}"
+    balance_sheet: "Balancete"

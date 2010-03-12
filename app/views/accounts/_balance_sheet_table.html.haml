@@ -1,10 +1,10 @@
 %table
   %th
-    %td= t("models.#{class_name}.plural")
+    %td= t("activerecord.models.#{class_name.underscore}")
   - accounts.each do |a|
     %tr[a]
       %td= link_to a.name, a
       %td= number_to_brl_currency(a.balance)
   %tr.total
-    %td= t("helpers.#{class_name}.total")
+    %td= t("helpers.total_account_group", :group => t("activerecord.models.#{class_name.underscore}"))
     %td= number_to_brl_currency(accounts.sum(&:balance))

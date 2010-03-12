@@ -2,8 +2,10 @@
 
 - semantic_form_for @account do |f|
   = f.error_messages
-  = f.input :name
-  = f.input :type, :collection => Account.types, :as => :radio, :label_method => :human_name, :value_method => :to_s
-  = f.commit_button
+  - f.inputs do
+    = f.input :name
+    = f.input :type, :collection => Account.types, :as => :radio, :label_method => :human_name, :value_method => :to_s
+  - f.buttons do
+    = f.commit_button
 
 = link_to t('navigation.back'), accounts_path

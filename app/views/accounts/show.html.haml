@@ -1,12 +1,10 @@
 %p
-  %b Name:
+  %b= t('helpers.account_type', :type => t("activerecord.models.#{@account.type.to_s.underscore}"))
   = @account.name
-  %b Type:
-  = @account.type
 %p
-  %b Balance:
+  %b= t('activerecord.attributes.account.balance')
   = number_to_brl_currency(@account.balance)
 
-= link_to 'Edit', edit_account_path(@account)
+= link_to t('navigation.edit'), edit_account_path(@account)
 \|
-= link_to 'Back', accounts_path
+= link_to t('navigation.back'), accounts_path

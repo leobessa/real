@@ -5,7 +5,7 @@
     %title
       = h(yield(:title) || "Untitled")
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
-    = stylesheet_link_tag 'application', 'formtastic', 'formtastic_changes', :cache => "base"
+    = stylesheet_link_tag 'application', 'formtastic', 'formtastic_changes'
     = yield(:head)
   
   %body
@@ -17,4 +17,6 @@
         %h1=h yield(:title)
       
       = yield
+
   = javascript_include_tag :all, :cache => true
+

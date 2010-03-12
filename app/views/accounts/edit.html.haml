@@ -1,10 +1,14 @@
-%h1 Editing account
+- title t('formtastic.titles.edit_account')
 
 - semantic_form_for @account do |f|
   = f.error_messages
-  = f.input :name
-  = f.submit
+  - f.inputs do
+    = f.input :name
+    = f.input :type, :input_html => { :disabled => true , :value => t("activerecord.models.#{@account.type.underscore}")}
+  - f.buttons do
+    = f.commit_button
 
-= link_to 'Show', @account
+= link_to t('navigation.show'), @account
 \|
-= link_to 'Back', accounts_path
+= link_to t('navigation.back'), accounts_path
+

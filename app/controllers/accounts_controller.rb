@@ -1,10 +1,10 @@
 class AccountsController < InheritedResources::Base
-  actions :index, :show, :new, :create
+  actions :index, :show, :new, :create, :edit, :update
 
   def create
     @account = Account.new(params[:account])
-    @account.type = Account.types.map(&:to_s).detect("Account"){ |t| t == params[:account][:type] }
-    p @account
+    subtype = Account.types.map(&:to_s).detect{ |t| t == params[:account][:type] }
+    @account.type = subtype
     create!
   end
   
