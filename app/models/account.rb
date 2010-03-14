@@ -1,5 +1,6 @@
 class Account < ActiveRecord::Base
   abstract_class = true
+  acts_as_tree
   
   def self.types
     [Asset, Equity, Expense, Income, Liability]

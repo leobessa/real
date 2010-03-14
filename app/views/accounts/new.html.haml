@@ -4,6 +4,7 @@
   = f.error_messages
   - f.inputs do
     = f.input :name
+    = f.input :parent, :collection => Account.all
     = f.input :type, :collection => Account.types, :as => :radio, :label_method => :human_name, :value_method => :to_s
   - f.buttons do
     = f.commit_button

@@ -139,6 +139,7 @@ pt-BR:
         name: "Nome"
         type: "Tipo"
         balance: "Balanço"
+        parent: "Conta Pai"
       accounting_transaction:
         title: "Título"
         creditor: "Conta creditada"
