@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :accounts, :collection => {:balance_sheet => :get }
   map.resources :accounting_transactions
+  map.root :controller => :dash_board
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

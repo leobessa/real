@@ -1,0 +1,17 @@
+- title t('.title')
+
+#accounts
+  %h2= t('.accounts_balance')
+
+  %table
+    %tr
+      %th= t('activerecord.attributes.account.name')
+      %th= t('activerecord.attributes.account.type')
+      %th= t('activerecord.attributes.account.balance')
+
+
+    - @accounts.each do |account|
+      %tr
+        %td= account.name
+        %td= t("activerecord.models.#{account.type.underscore}")
+        %td= number_to_brl_currency(account.balance)

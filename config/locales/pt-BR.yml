@@ -133,12 +133,20 @@ pt-BR:
       expense: "Despesa"
       income: "Receita"
       liability: "Passivo"
-      accounting_transaction: "Transação"
+      accounting_transaction: "Lançamento"
     attributes:
       account:
         name: "Nome"
         type: "Tipo"
         balance: "Balanço"
+      accounting_transaction:
+        title: "Título"
+        creditor: "Conta creditada"
+        debitor: "Conta debitada"
+        date: "Data"
+        status: "Status"
+        amount: "Quantia"
+        description: "Descrição"
         
   formtastic:
         titles:
@@ -165,6 +173,19 @@ pt-BR:
   accounts:
       index:
         title: "Plano de Contas"
+      new:
+        title: "Nova conta"
+      balance_sheet:
+        title: "Balancete"
+  accounting_transactions:
+      index:
+        title: "Lançamentos"
+      new:
+        title: "Novo lançamento"
+  dash_board:
+      index:
+        title: "Visão Geral"
+        accounts_balance: "Saldo atual das contas"
         
   helpers:
     total_account_group: "Total da contas de {{group}}"

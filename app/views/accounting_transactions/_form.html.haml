@@ -2,11 +2,11 @@
   = f.error_messages
   - f.inputs do
     = f.input :title
-    = f.input :creditor_id, :collection => Account.all, :value_method => :id
-    = f.input :debitor_id, :collection => Account.all, :value_method => :id
+    = f.input :creditor, :collection => Account.all, :value_method => :id
+    = f.input :debitor, :collection => Account.all, :value_method => :id
     = f.input :amount
     = f.input :date
     = f.input :status
     = f.input :description
   - f.buttons do
-    = f.submit 'Save'
+    = f.commit_button
